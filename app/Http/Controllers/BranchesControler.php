@@ -20,7 +20,7 @@ class BranchesControler extends Controller
     
 
     public function show($sha){
-        $response = Http::withBasicAuth(env('GITHUB_USER'), env('GITHUB_TOKEN'))->get('https://api.github.com/repos/juan149609/loginApp/commits?sha=' . $sha);
+        $response = Http::withBasicAuth(env('GITHUB_USER'), env('GITHUB_TOKEN'))->get('https://api.github.com/repos/juan149609/99minutos-fullstack-interview-test/commits?sha=' . $sha);
         
         return view('branch', ['data' => $response->json()]);
     }
